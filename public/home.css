@@ -1,0 +1,110 @@
+body{
+	background-color:black;
+}
+
+.home { 
+	padding-top:40vh;
+	color:white;
+	position:relative;
+	z-index:1;
+}
+
+.home i{
+	color:grey;
+}
+
+.slideshow {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	list-style:none;
+	z-index:0;
+	
+	padding:0;
+}
+
+.slideshow li{
+	
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	
+	z-index:0;
+	
+	animation:imageAnimation 35s linear infinite;
+	background-size:cover;
+	opacity:0;
+	/*background-position:50% 50%;*/
+	
+	
+}
+
+.slideshow li:nth-child(1){
+	
+	background-image:url(https://i.pinimg.com/originals/0f/3a/93/0f3a9331365ff569d409d8ac414410c5.jpg)
+}
+.slideshow li:nth-child(2){
+	
+	background-image:url(https://hdwallsource.com/img/2016/5/violin-wallpaper-background-49003-50653-hd-wallpapers.jpg);
+	animation-delay:5s;
+}
+
+.slideshow li:nth-child(3){
+	
+	background-image:url(https://free4kwallpapers.com/uploads/originals/2015/08/11/free-music-background.jpg);
+	animation-delay:10s;
+}
+
+.slideshow li:nth-child(4){
+	
+	background-image:url(https://www.elsetge.cat/myimg/f/15-156183_wallpaper-music-doodles-colorful-musical-instruments-doodle-background.jpg);
+	animation-delay:15s;
+}
+
+.slideshow li:nth-child(5){
+	
+	background-image:url(https://windows10wall.com/wp-content/uploads/2014/08/guitar-in-dark-background-wallpaper.jpg);
+	animation-delay:20s;
+}
+
+.slideshow li:nth-child(6){
+	
+	background-image:url(https://images-na.ssl-images-amazon.com/images/I/71CVbrlwt9L._SL1280_.jpg);
+	animation-delay:25s;
+}
+
+.slideshow li:nth-child(7){
+	
+	background-image:url(https://www.desktopbackground.org/p/2013/01/08/511390_organ-and-piano-hd-wallpapers-free-download-musical-instruments_1600x1200_h.jpg);
+	animation-delay:30s;
+}
+
+@keyframes imageAnimation{
+	
+	0%{
+		opacity:0;
+		animation-timing-function:ease-in;
+	}
+	5.7%{
+		opacity:1;
+		animation-timing-function:ease-out;
+	}
+	14.3%{
+		opacity:1;
+	}
+	20%{
+		opacity:0;
+	}
+}
+/*
+https://i.pinimg.com/originals/0f/3a/93/0f3a9331365ff569d409d8ac414410c5.jpg
+https://hdwallsource.com/img/2016/5/violin-wallpaper-background-49003-50653-hd-wallpapers.jpg
+https://free4kwallpapers.com/uploads/originals/2015/08/11/free-music-background.jpg
+
+*/
+
+

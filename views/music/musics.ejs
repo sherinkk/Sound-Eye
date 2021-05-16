@@ -1,0 +1,63 @@
+
+<%- include("../partials/header.ejs")%>
+
+<div class="container-fluid mt-3  mr-sm-3">
+	<div class="jumbotron " style="">
+		
+		<h1 class="text-center">
+			W E L C O M E  
+		</h1>
+		<br>
+		<br>
+		<h1 class="text-center display-4 display-sm-4" style="font-family: 'Monoton', cursive;">
+			SOUND <i class="fas fa-eye" style="font-size:80%;"></i> EYE
+		</h1>
+		<a class="btn btn-outline-success float-right" href="/musics/new">Click to Add</a>
+		
+
+	</div>
+	
+</div>
+
+
+	  
+	  
+	  
+<div id="parent" class="container">
+	<div class="row justify-content-around mb-5" style="">
+		<%musics.forEach(function(music){%>
+
+		
+		
+		
+		
+		<div id="child" class="col-lg-3 col-10 mt-4 mb-2 mr-2 border border-light rounded p-2 gray-color " style="height:7rem;">
+			
+			
+				
+			<a class="text-white " href="/musics/<%=music._id%>/pages/info">
+				<div class="col-6 float-left">
+					<img class=" img-fluid rounded" style="height:6rem;width:100%;" src="<%=music.image%>">
+				</div>
+				<div class="col-6 float-left text-left pr-0 pl-0">
+					<div class="">
+						<h5 class="text-info"><%=music.title.substring(0,30)%></h5>
+						<p class="text-light"><em><%=music.artist.substring(0,15)%></em></p>
+						
+					</div>
+
+				</div>
+				
+			</a>
+
+
+		</div>	  
+
+
+	<%})%>
+	</div>
+	
+</div>
+
+
+<%- include("../partials/footer.ejs")%>

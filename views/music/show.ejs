@@ -1,0 +1,166 @@
+<%- include("../partials/header.ejs")%>
+<div class="row mt-5 mb-5">
+	
+	
+	
+	
+	<%if(page==="info"){%>
+	<div class="col-sm-4 p-5 ">
+		<div class="list-group m-2">
+			<a href="/musics/<%=music._id%>/pages/info" class="list-group-item list-group-item-action list-group-item-info active">INFO</a>
+			<a href="/musics/<%=music._id%>/pages/lyrics" class="list-group-item list-group-item-action list-group-item-info">LYRICS</a>
+			<a href="/musics/<%=music._id%>/pages/reviews" class="list-group-item list-group-item-action list-group-item-info">REVIEWS</a>
+			<a href="/musics/<%=music._id%>/pages/settings" class="list-group-item list-group-item-action list-group-item-info">SETTINGS</a>
+			
+		</div>
+	</div>
+	<div class="col-sm-8 p-5">
+		<div class="card p-sm-5 " style="width:100%;background-color:rgb( 159, 229, 217);">
+			<img class="card-img-top" src="<%=music.image%>">
+			<div class="card-body">
+				<h5>
+					<%=music.title%>
+				</h5>
+				<p>
+					<em><%=music.artist%></em>
+				</p>
+				<p>
+					<%=music.description%>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+	
+	<%}%>
+	
+	
+	
+	
+	
+	
+	
+	<%if(page==="lyrics"){%>
+	<div class="col-sm-4 p-5 ">
+		<div class="list-group m-2">
+			<a href="/musics/<%=music._id%>/pages/info" class="list-group-item list-group-item-action list-group-item-info">INFO</a>
+			<a href="/musics/<%=music._id%>/pages/lyrics" class="list-group-item list-group-item-action list-group-item-info active">LYRICS</a>
+			<a href="/musics/<%=music._id%>/pages/reviews" class="list-group-item list-group-item-action list-group-item-info">REVIEWS</a>
+			<a href="/musics/<%=music._id%>/pages/settings" class="list-group-item list-group-item-action list-group-item-info">SETTINGS</a>
+			
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="card " style="width:90%;background-color:black;">
+			<img class="card-img-top" src="https://thumbs.dreamstime.com/b/hammer-wrench-icon-black-background-black-flat-style-vector-illustration-hammer-wrench-icon-black-background-black-170443768.jpg">
+			
+		</div>
+	</div>
+	
+	<%}%>
+	
+	
+	
+	
+	
+	<%if(page==="reviews"){%>
+	<div class="col-sm-4 p-5 ">
+		<div class="list-group m-2">
+			<a href="/musics/<%=music._id%>/pages/info" class="list-group-item list-group-item-action list-group-item-info ">INFO</a>
+			<a href="/musics/<%=music._id%>/pages/lyrics" class="list-group-item list-group-item-action list-group-item-info">LYRICS</a>
+			<a href="/musics/<%=music._id%>/pages/reviews" class="list-group-item list-group-item-action list-group-item-info active">REVIEWS</a>
+			<a href="/musics/<%=music._id%>/pages/settings" class="list-group-item list-group-item-action list-group-item-info">SETTINGS</a>
+			
+		
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="m-5">
+			
+
+			<a href="/musics/<%=music._id%>/reviews/new" class="btn btn-bloc btn-outline-primary mb-3">ADD REVIEW</a>
+			
+			<%music.reviews.forEach(function(review){%>
+			<div class="bg-dark rounded mb-1">
+				
+				
+				
+				<div class="d-inline outer-stars float-right pt-3 pr-2">
+					<div class="inner-stars pt-3 " style="width:<%=review.rating*18.5%>%;">
+						
+					</div>
+				</div>
+				
+				
+				
+				<div class="text-light pt-3 pl-2" >
+					<em>review by <b><%=review.author.username%></b></em>	
+				</div>
+				
+				
+				
+				
+				<div class="ml-5 mr-3 mt-2 mb-1 text-light">
+					<%=review.content%>
+				</div>
+				
+				
+				
+				<form class="mb-2 float-left"action="/musics/<%=music._id%>/reviews/<%=review._id%>/edit" method="GET">
+					<button class="btn btn-outline-dark text-primary bg-dark ">
+						edit
+					</button>
+				</form>
+				<form action="/musics/<%=music._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+					<button class="btn btn-outline-dark text-primary  bg-dark">
+						delete
+					</button>
+				</form>
+				
+				
+			</div>	
+			<%})%>
+		</div>
+		
+	</div>
+	
+	<%}%>
+	<%if(page==="settings"){%>
+	<div class="col-sm-4 p-5 ">
+		<div class="list-group m-2">
+			<a href="/musics/<%=music._id%>/pages/info" class="list-group-item list-group-item-action list-group-item-info ">INFO</a>
+			<a href="/musics/<%=music._id%>/pages/lyrics" class="list-group-item list-group-item-action list-group-item-info">LYRICS</a>
+			<a href="/musics/<%=music._id%>/pages/reviews" class="list-group-item list-group-item-action list-group-item-info">REVIEWS</a>
+			<a href="/musics/<%=music._id%>/pages/settings" class="list-group-item list-group-item-action list-group-item-info active">SETTINGS</a>
+			
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="p-5">
+			<div class="bg-light rounded p-3 mb-1">
+				<p>
+					added to <span  style="font-family: 'Monoton', cursive;font-size:200%;">SOUND EYE</span> by <b><%=music.author.username%></b>
+				</p>
+			</div>	
+			<form class="mb-2 "action="/musics/<%=music._id%>/edit" method="GET">
+				<button class="btn btn-outline-light text-warning bg-dark btn-block">
+					EDIT
+				</button>
+			</form>
+			<form action="/musics/<%=music._id%>?_method=DELETE" method="POST">
+				<button class="btn btn-outline-light text-danger bg-dark btn-block">
+					DELETE
+				</button>
+			</form>
+		</div>
+	</div>
+	
+	<%}%>
+	
+
+	
+</div>
+
+
+
+<%- include("../partials/footer.ejs")%>

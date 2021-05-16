@@ -1,0 +1,48 @@
+
+
+.outer-stars{
+	position:relative;
+	display:inline-block;
+}
+
+.inner-stars{
+	position:absolute;
+	
+	top:0;
+	left:0;
+	width:0;
+	overflow:hidden;
+	white-space:0;
+	
+}
+
+.outer-stars::before{
+	content: "\f005 \f005 \f005 \f005 \f005";
+	font-family:"Font Awesome 5 Free";
+	color:grey;
+	font-weight:900;
+	
+}
+
+
+.inner-stars::before{
+	content: "\f005 \f005 \f005 \f005 \f005";
+	font-family:"Font Awesome 5 Free";
+	color:#FFDF00;
+	
+	font-weight:900;
+	
+	
+	 
+}
+
+
+.gray-color{
+	filter:grayscale(100%);
+}
+
+body {
+	background-color:black;
+}
+
+
